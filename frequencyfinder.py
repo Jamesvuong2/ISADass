@@ -69,16 +69,19 @@ def get_frequency_range_from_colour(colour_name):
     Determines the frequency produced by a given colour.
     """
     colours = {
-        "violet": (670, 790),
-        "blue": (620, 669),
-        "cyan": (600, 619),
-        "green": (530, 599),
-        "yellow": (510, 529),
-        "orange": (480, 509),
-        "red": (400, 479),
+        "violet": [670, 790],
+        "blue": [620, 669],
+        "cyan": [600, 619],
+        "green": [530, 599],
+        "yellow": [510, 529],
+        "orange": [480, 509],
+        "red": [400, 479],
     }
 
-    colour_name = colour_name.lower()
+    colour_name = colours.get(str)
+    lower = colours.get(colour_name, [0])
+    upper = colours.get(colour_name, [1])
+    
     if colour_name in colours:
         lower, upper = colours[colour_name]
         return f"The frequency range for {colour_name} is {lower} THz to {upper} THz."
@@ -119,6 +122,8 @@ def userinterface1():
             print(f"Frequency {frequency} THz is in the range: {range_check}.")
             colour = get_colour_from_frequency(frequency)
             print(f"Frequency {frequency} THz produces the colour: {colour}.")
+            colour_range = get_frequency_range_from_colour(colour)
+            print(colour_range)
         except ValueError:
             print("Invalid frequency input. Please enter a valid number followed by 'THz'.")
 
@@ -131,6 +136,8 @@ def userinterface1():
             print(f"Wavelength {wavelength} nm corresponds to a frequency in the range: {range_check}.")
             colour = get_colour_from_frequency(frequency)
             print(f"Wavelength {wavelength} nm produces the colour: {colour}.")
+            colour_range = get_frequency_range_from_colour(colour)
+            print(colour_range)
         except ValueError:
             print("Invalid wavelength input. Please enter a valid number followed by 'nm'.")
 
