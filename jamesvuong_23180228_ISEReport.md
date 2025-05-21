@@ -80,16 +80,6 @@ Black Box Test Cases:
     |                                            |                     |                           |
     |____________________________________________|_____________________|___________________________|
 
-    wavelength_to_frequency
-    Imports: wavelength
-    Exports: frequency
-    Description: Converts wavelength (in nm) to frequency (in THz) and returns the frequency.
-    ________________________________________________________________________________________________
-    |                 Category                   |     Test Data       |       Expected Result     |
-    |frequency = c / (wavelength * 10**-9)       |wavelength = 400     |      750                  |
-    |                                            |                     |                           |
-    |____________________________________________|_____________________|___________________________|
-
     check_frequency_range
     Imports: frequency
     Exports: radiation_range (string)
@@ -125,4 +115,56 @@ Black Box Test Cases:
     |__________________________|_______________________|______________________|
 
 White Box Test Cases
-    
+    check_frequency_range
+    Imports: frequency
+    Exports: radiation_range (string)
+    Description: Checks if the frequency is within visible, IR, or UV ranges. If the frequency is between 400 and 790, then "Visible Light" is returned. If the frequency is between 791 and 30000, then "UV Radiation" is returned. If the frequency is between 1 and 399, then "IR Radiation" is returned.
+    _________________________________________________________________________
+    |      Path              |  Test Data            |   Expected Result    |
+    | Enter the if part      | frequency = 500       | "Visible Light"      |
+    | Enter the elif part    | frequency = 800       | "UV Radiation"       |
+    | Enter the 2nd elif part| frequency = 200       | "IR Radiation"       |
+    | Enter the else part    | frequency = 23180228  | "Out of Range"       |
+    |________________________|_______________________|______________________|
+
+    get_colour_from_frequency
+    Imports: frequency
+    Exports: colour (string)
+    Description: Determines the colour produced by a given frequency and returns the colour.
+    ____________________________________________________________________________
+    |           Path                   |  Test Data     |   Expected Result    |
+    | Enter the if part                | frequency = 300| Invalid              |
+    | Enter the if part                | frequency = 500| Orange               |
+    | Enter the if part                | frequency = 700| Violet               |
+    |__________________________________|________________|______________________|
+
+    get_frequency_range_from_colour
+    Imports: colour_name (string)
+    Exports: lower (int), upper (int), colour_name (string)
+    Description: Determines the frequency produced by a given colour and returns the lower and upper bounds of said colour.
+    ___________________________________________________________________________
+    |    Path                  |  Test Data            |   Expected Result    |
+    | Enter the if part        |colour_name == "violet"|670, 790              |
+    | Enter the else part      |colour_name == "garlic"|Invalid               |
+    |__________________________|_______________________|______________________|
+
+    compare_frequencies
+    Imports: freq1, freq2
+    Exports: colour1 (string), colour2 (string)
+    Description: Compares two frequencies to determine if they represent the same colour or different colours and returns a message saying either that they represent the same colour or different colours.
+    ______________________________________________________________________________________________________________________
+    |        Path              |  Test Data             |                           Expected Result                      |
+    | Enter the 3rd if part    |freq1 = 400, freq2 = 400|"Both frequencies represent the same colour: red."              |
+    | Enter the else part      |freq1 = 400, freq2 = 700|"Frequency 1 represents red, and Frequency 2 represents violet."|
+    |__________________________|________________________|________________________________________________________________|
+
+Summary Table:
+    __________________________________________________________________________________________________________________________________________________
+    |________________________________|    Design of test cases                                           |   test code implementation and execution  |
+    |   Module name                  |  BB (EP) |BB (BVA)|WB      |    Data Types   |Form of input/output|    EP  |   BVA    |    White-Box          |
+    |frequency_to_wavelength         |done      |not done|not done|any              |frequency           |not done|not done  |not done               |
+    |check_frequency_range           |not done  |done    |not done|any, string      |frequency           |not done|not done  |not done               |
+    |get_colour_from_frequency       |done      |not done|not done|any, string      |frequency           |not done|not done  |not done               |
+    |get_frequency_range_from_colour |done      |not done|not done|string, integer  |colour              |not done|not done  |not done               |
+    |compare_frequencies             |not done  |not done|done    |any, string      |frequency, frequency|not done|not done  |not done               |
+    |________________________________|__________|________|________|_________________|____________________|________|__________|_______________________|
