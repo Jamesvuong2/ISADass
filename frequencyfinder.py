@@ -57,13 +57,6 @@ def get_colour_from_frequency(frequency):
         if lower <= frequency <= upper:
             return colour
 
-    if frequency > 790:
-        return "Frequency is higher than violet."
-    elif frequency < 400:
-        return "Frequency is lower than red."
-    else:
-        return "Out of Range"
-
 def get_frequency_range_from_colour(colour_name):
     """
     Determines the frequency produced by a given colour.

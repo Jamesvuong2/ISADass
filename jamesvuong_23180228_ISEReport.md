@@ -26,13 +26,13 @@ Modules:
 
     get_colour_from_frequency
     Imports: frequency
-    Exports: colour (string), lower (string), upper(string)
-    Description: Determines the colour produced by a given frequency and returns the upper and lower bounds of said colour. 
+    Exports: colour (string)
+    Description: Determines the colour produced by a given frequency and returns the colour.
 
     get_frequency_range_from_colour
     Imports: colour_name (string)
     Exports: lower (int), upper (int), colour_name (string)
-    Description: Determines the frequency produced by a given colour.
+    Description: Determines the frequency produced by a given colour and returns the lower and upper bounds of said colour.
 
     compare_frequencies
     Imports: freq1, freq2
@@ -53,3 +53,10 @@ Modules:
     Imports:
     Exports:
     Description: The main module.
+
+Review Checklist:
+    1. Are the calulations for frequencies to wavelength and wavelength to frequencies accurate enough?  | Yes
+    2. Does the check_frequency_range module correctly finds the radiation range for the imported value?    | Yes
+    3. Does the get_colour_from_frequency module output a colour that corresponds to the ranges in the colours.items list?  | Yes
+    4. Does the get_frequency_range_from_colour module export 2 frequencies that are the upper and lower bounds of the imported colour?     | Yes
+    5. 
