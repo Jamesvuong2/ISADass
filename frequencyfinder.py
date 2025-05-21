@@ -107,6 +107,7 @@ def userinterface1():
 
     # Extract all numeric values from the input
     numbers = re.findall(r"[-+]?\d*\.?\d+", userinput)
+    # Check if userinput contains two frequencies
     if len(numbers) > 1:
         try:
             freq1, freq2 = map(float, numbers[:2])
