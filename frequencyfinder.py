@@ -78,9 +78,7 @@ def get_frequency_range_from_colour(colour_name):
         "red": [400, 479],
     }
 
-    colour_name = colours.get(str)
-    lower = colours.get(colour_name, [0])
-    upper = colours.get(colour_name, [1])
+    colour_name = colour_name.lower()
     
     if colour_name in colours:
         lower, upper = colours[colour_name]
