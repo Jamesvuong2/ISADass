@@ -104,7 +104,7 @@ def compare_frequencies(freq1, freq2):
 
 def userinterface1():
     """
-    Entry point of the application.
+    User interface for figure 1
     """
 
     userinput = input(":")
