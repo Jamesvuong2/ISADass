@@ -2,6 +2,8 @@
 # Author: James Vuong
 # ID: 23180228
 
+import re
+
 def frequency_to_wavelength(frequency):
     """
     Converts frequency (in THz) to wavelength (in nm).
@@ -103,8 +105,15 @@ def userinterface1():
 
     userinput = input(":")
 
+    # Extract all numeric values from the input
+    numbers = re.findall(r"[-+]?\d*\.?\d+", userinput)
+    if len(numbers) > 1:
+        freq1, freq2 = map(float, numbers[:2])
+        comparation = compare_frequencies(freq1, freq2)
+        print(comparation)
+
     # Check if userinput contains "THz" or "nm"
-    if "THz" in userinput:
+    elif "THz" in userinput:
         try:
             frequency = float(userinput.replace("THz", "").strip())
             wavelength = frequency_to_wavelength(frequency)
