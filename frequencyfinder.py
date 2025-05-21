@@ -108,9 +108,12 @@ def userinterface1():
     # Extract all numeric values from the input
     numbers = re.findall(r"[-+]?\d*\.?\d+", userinput)
     if len(numbers) > 1:
-        freq1, freq2 = map(float, numbers[:2])
-        comparation = compare_frequencies(freq1, freq2)
-        print(comparation)
+        try:
+            freq1, freq2 = map(float, numbers[:2])
+            comparation = compare_frequencies(freq1, freq2)
+            print(comparation)
+        except ValueError:
+            print("Invalid frequency input. Please enter a valid number(s) followed by 'THz'.")
 
     # Check if userinput contains "THz" or "nm"
     elif "THz" in userinput:
