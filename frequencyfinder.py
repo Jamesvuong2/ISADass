@@ -69,13 +69,13 @@ def get_frequency_range_from_colour(colour_name):
     Determines the frequency produced by a given colour.
     """
     colours = {
-        "violet": [670, 790],
-        "blue": [620, 669],
-        "cyan": [600, 619],
-        "green": [530, 599],
-        "yellow": [510, 529],
-        "orange": [480, 509],
-        "red": [400, 479],
+        "violet": (670, 790),
+        "blue": (620, 669),
+        "cyan": (600, 619),
+        "green": (530, 599),
+        "yellow": (510, 529),
+        "orange": (480, 509),
+        "red": (400, 479),
     }
 
     colour_name = colour_name.lower()
