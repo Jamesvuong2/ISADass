@@ -1,7 +1,6 @@
 import frequencyfinder
 import unittest
 
-
 class TestFrequencyFinder(unittest.TestCase):
     """
     Test class for testing frequencyfinder module functions
@@ -12,8 +11,8 @@ class TestFrequencyFinder(unittest.TestCase):
         Test the frequency_to_wavelength function with valid input
         """
         # Test with a valid frequency
-        frequency = 300.0  # THz
-        expected_wavelength = 1000.0  # nm
+        frequency = 300.0
+        expected_wavelength = 1000.0
         result = frequencyfinder.frequency_to_wavelength(frequency)
         self.assertAlmostEqual(result, expected_wavelength, places=6,
                                msg=f"Expected {expected_wavelength}, got {result}")
@@ -25,8 +24,8 @@ class TestFrequencyFinder(unittest.TestCase):
         # Test with an invalid frequency (string)
         with self.assertRaises(TypeError):
             frequencyfinder.frequency_to_wavelength("invalid")
-        
-        # Test with zero frequency
+
+        # Test with no frequency
         with self.assertRaises(ZeroDivisionError):
             frequencyfinder.frequency_to_wavelength(0)
 
@@ -34,8 +33,8 @@ class TestFrequencyFinder(unittest.TestCase):
         """
         Test the wavelength_to_frequency function with valid input
         """
-        wavelength = 1000.0  # nm
-        expected_frequency = 300.0  # THz
+        wavelength = 1000.0
+        expected_frequency = 300.0
         result = frequencyfinder.wavelength_to_frequency(wavelength)
         self.assertAlmostEqual(result, expected_frequency, places=6,
                                msg=f"Expected {expected_frequency}, got {result}")
@@ -65,7 +64,7 @@ class TestFrequencyFinder(unittest.TestCase):
         # Test IR radiation range
         self.assertEqual(frequencyfinder.check_frequency_range(200), "IR Radiation")
         
-        # Test out of range
+        # Test invalid range
         self.assertEqual(frequencyfinder.check_frequency_range(50000), "Out of Range")
 
     def test_get_colour_from_frequency(self):

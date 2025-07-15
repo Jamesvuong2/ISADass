@@ -6,6 +6,9 @@
     Afterwards, the program then asks the user for a colour in which it will print out the associated stone, musical note and eotion associated with it.
     For more info, please check code comments.
 
+## Instructions to run the test code:
+    python3 -m unittest testfrequencyfinder.py -v
+
 ## Installation
 1. Clone the repository:
 
@@ -14,7 +17,6 @@
 2. Navigate to the project directory:
 
     cd vuong_james23180228_ISErepo
-
 
 ## Usage
     python3 frequencyfinder.py
