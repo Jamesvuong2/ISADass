@@ -162,9 +162,9 @@ Summary Table:
     __________________________________________________________________________________________________________________________________________________
     |________________________________|    Design of test cases                                           |   test code implementation and execution  |
     |   Module name                  |  BB (EP) |BB (BVA)|WB      |    Data Types   |Form of input/output|    EP  |   BVA    |    White-Box          |
-    |frequency_to_wavelength         |done      |not done|not done|any              |frequency           |not done|not done  |not done               |
-    |check_frequency_range           |not done  |done    |not done|any, string      |frequency           |not done|not done  |not done               |
-    |get_colour_from_frequency       |done      |not done|not done|any, string      |frequency           |not done|not done  |not done               |
-    |get_frequency_range_from_colour |done      |not done|not done|string, integer  |colour              |not done|not done  |not done               |
-    |compare_frequencies             |not done  |not done|done    |any, string      |frequency, frequency|not done|not done  |not done               |
+    |frequency_to_wavelength         |done      |not done|not done|any              |frequency           |done    |done      |done                   |
+    |check_frequency_range           |not done  |done    |not done|any, string      |frequency           |done    |done      |done                   |
+    |get_colour_from_frequency       |done      |not done|not done|any, string      |frequency           |done    |done      |done                   |
+    |get_frequency_range_from_colour |done      |not done|not done|string, integer  |colour              |done    |done      |done                   |
+    |compare_frequencies             |not done  |not done|done    |any, string      |frequency, frequency|done    |done      |done                   |
     |________________________________|__________|________|________|_________________|____________________|________|__________|_______________________|
